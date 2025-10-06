@@ -12,31 +12,26 @@ public class Main {
 
 
         int clientDeviceYear = 2015;
-        if (clientOS == 0) {
-            if (clientDeviceYear < 2015) {
-                System.out.println("Установите облегченную версию приложения для iOS по ссылке");
-            } else {
-                System.out.println("Установите версию приложения для iOS по ссылке");
-            }
-        } else if (clientOS == 1) {
-            if (clientDeviceYear < 2015) {
-                System.out.println("Установите облегченную версию приложения для Android по ссылке");
-            } else {
-                System.out.println("Установите версию приложения для Android по ссылке");
-            }
-
+        if (clientOS == 0 && clientDeviceYear < 2015) {
+            System.out.println("Установите облегченную версию приложения для iOS по ссылке");
+        } else if (clientOS == 0){
+            System.out.println("Установите версию приложения для iOS по ссылке");
+        } else if (clientOS == 1 && clientDeviceYear < 2015){
+            System.out.println("Установите облегченную версию приложения для Android по ссылке");
+        } else if (clientOS == 1){
+            System.out.println("Установите версию приложения для Android по ссылке");
         }
+
 
         int year = 2006;
-        if (year > 1584) {
-            if (year % 400 == 0 || (year % 4 == 0 && year % 100 != 0)) {
-                System.out.println("Год является високосным");
-            } else {
-                System.out.println("Год не является високосным");
-            }
-        } else {
+        if (year <= 1584) {
             System.out.println("Год должен быть больше 1584");
+        } else if (year % 400 == 0 || (year % 4 == 0 && year % 100 != 0)) {
+            System.out.println("Год является високосным");
+        } else {
+            System.out.println("Год не является високосным");
         }
+
 
         int deliveryDistance = 95;
         int days = 1;
@@ -77,5 +72,7 @@ public class Main {
             default:
                 System.out.println("Такого месяца нет");
         }
+
+
         }
 }
